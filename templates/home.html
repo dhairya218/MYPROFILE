@@ -1,0 +1,297 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+    
+        /* Navbar Styles */
+        /* .navbar {
+            background-color: #444;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+    
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        } */
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #444;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Left Side for Portfolio Name */
+        .navbar-left a {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        /* Right Side for Navigation Links */
+        .navbar-right {
+            display: flex;
+            gap: 20px; /* Space between each link */
+        }
+
+        .navbar-right a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .navbar-right a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+    
+        /* Home Section Styles */
+        /* #home {
+            background-color: #e8f1f5; 
+            padding: 100px 20px;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px; 
+        }
+
+        .home-left {
+            flex: 1;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .home-left h1 {
+            font-size: 4rem; 
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left; 
+        }
+
+        .home-left p {
+            font-size: 1.4rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: left; 
+        }
+
+        .home-right {
+            flex: 0 0 35%; 
+            padding-right: 40px;
+        }
+
+        .home-right img {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        } */
+
+        #home {
+            background-image: url("{% static 'images/dhairy11.jpg' %}"); /* Background image */
+            background-size: cover; /* Ensure the image covers the entire section */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            padding: 100px 20px;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+}
+
+        .home-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px; /* Maximum width for the whole section */
+        }
+
+        .home-left {
+            flex: 1;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.7);  /* Optional: Light background behind text for better contrast */
+            padding: 20px;
+            border-radius: 10px;  /* Optional: rounded corners */
+        }
+
+        .home-left h1 {
+            font-size: 4rem; /* Large font for the title */
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .home-left p {
+            font-size: 1.2rem; /* Smaller content size */
+            color: #555;
+            line-height: 1.8;
+            text-align: left; /* Align text to the left */
+        }
+
+        .home-right {
+            flex: 0 0 40%; /* Image section takes up 40% of the width */
+            background-image: url("{% static 'images/dhairy11.jpg' %}"); /* Set background image */
+            background-size: cover; /* Ensure the image covers the whole section */
+            background-position: center;
+            height: 100%; /* Full height */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+    <!-- <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div> -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="#">Dhairy Dandaiya</a>
+        </div>
+        <div class="navbar-right">
+            <a href="#home">Home</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- <section id="home">
+        <div class="home-wrapper">
+            <div class="home-left">
+                <h1>Hi, I'm Dhairy Dandaiya</h1>
+                <p>
+                    I'm a passionate Python/Django developer with expertise in building efficient, scalable web applications.
+                    I specialize in backend development, creating robust APIs, and implementing complex business logic.
+                    Dedicated to problem-solving and optimizing performance, I'm always eager to learn new technologies and
+                    deliver high-quality solutions.
+                </p>
+            </div>
+            <div class="home-right">
+                <img src="{% static 'images/dhairy11.jpg' %}" alt="Dhairy Dandaiya">
+            </div>
+        </div>
+    </section> -->
+
+    <section id="home">
+        <div class="home-wrapper">
+            <!-- Left Section for Content -->
+            <div class="home-left">
+                <h1>Hi, I'm Dhairy Dandaiya</h1>
+                <p>
+                    I'm a passionate Python/Django developer with expertise in building efficient, scalable web applications.
+                    I specialize in backend development, creating robust APIs, and implementing complex business logic.
+                    Dedicated to problem-solving and optimizing performance, I'm always eager to learn new technologies and
+                    deliver high-quality solutions.
+                </p>
+            </div>
+        </div>
+    </section>    
+    
+
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2>Achievements</h2>
+            <p>List your professional and personal achievements here. You can include certificates, awards, and recognitions.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <p>Describe your educational background. Mention degrees, universities, and any special qualifications.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Provide your contact details here. You can include your email, phone number, and links to social media profiles.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Dhairy Dandaiya. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
